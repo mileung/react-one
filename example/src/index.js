@@ -1,7 +1,43 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider, connect } from 'react-one';
 
-import './index.css'
-import App from './App'
+const INITIAL_STATE = { num: 0 };
 
-ReactDOM.render(<App />, document.getElementById('root'))
+class App extends React.Component {
+  render() {
+    return (
+      <Provider initialState={INITIAL_STATE}>
+        <div>
+          <Buttons />
+          <Num />
+        </div>
+      </Provider>
+    );
+  }
+}
+
+class Buttons extends React.Component {
+  render() {
+    let { state, setState } = this.props;
+    return (
+      <div>
+        <button onClick={() => setState({ num: ++state.num })}>+</button>
+        <button onClick={() => setState({ num: --state.num })}>-</button>
+      </div>
+    );
+  }
+}
+
+Buttons = connect(Buttons); // if this were in another file, export default connect(Buttons)
+
+class Num extends React.Component {
+  render() {
+    let { state } = this.props;
+    return <h1>{state.num}</h1>;
+  }
+}
+
+Num = connect(Num); // if this were in another file, export default connect(Num)
+
+ReactDOM.render(<App />, document.getElementById('root'));
