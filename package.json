@@ -1,10 +1,13 @@
 {
   "name": "react-one",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A single store, single action, global state management system for React apps.",
   "author": "MiLeung",
   "license": "ISC",
-  "repository": "https://github.com/MiLeung/react-one",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiLeung/react-one.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -53,5 +56,23 @@
   },
   "files": [
     "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/MiLeung/react-one/issues"
+  },
+  "homepage": "https://github.com/MiLeung/react-one#readme",
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "react",
+    "one",
+    "single",
+    "store",
+    "action",
+    "global",
+    "state",
+    "management",
+    "system"
   ]
 }

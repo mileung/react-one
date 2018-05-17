@@ -5,7 +5,9 @@ A single store, single action, global state management system for React apps.
 ## installation
 
 `npm install react-one --save`
+
 or
+
 `yarn add react-one`
 
 ## Usage
@@ -64,10 +66,7 @@ setState({ num: ++state.num }); // state.num = 2
 
 
 ## Example
-To run this example, clone this repository, cd into it, and run:
-`cd src`
-`npm install`
-`npm start`
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
