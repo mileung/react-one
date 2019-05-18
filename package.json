@@ -1,6 +1,6 @@
 {
   "name": "react-one",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A single store, single action, global state management system for React apps.",
   "author": "MiLeung",
   "license": "ISC",

@@ -7,7 +7,10 @@ const INITIAL_STATE = { num: 0 };
 class App extends React.Component {
   render() {
     return (
-      <Provider initialState={INITIAL_STATE}>
+      <Provider
+        initialState={INITIAL_STATE}
+        onSetState={newState => console.log('newState', newState)}
+      >
         <div>
           <Buttons />
           <Num />

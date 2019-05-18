@@ -20,7 +20,10 @@ const INITIAL_STATE = { num: 0 };
 ...
 render() {
   return (
-    <Provider initialState={INITIAL_STATE}>
+    <Provider
+      initialState={INITIAL_STATE}
+      onSetState={newState => console.log('newState', newState)}
+      >
       <App />
     </Provider>
   );
@@ -63,8 +66,6 @@ setState({ num: ++state.num });
 setState({ num: ++state.num }); // state.num = 2
 ```
 
-
-
 ## Example
 
 ```js
@@ -77,7 +78,10 @@ const INITIAL_STATE = { num: 0 };
 class App extends React.Component {
   render() {
     return (
-      <Provider initialState={INITIAL_STATE}>
+      <Provider
+        initialState={INITIAL_STATE}
+        onSetState={newState => console.log('newState', newState)}
+        >
         <div>
           <Buttons />
           <Num />
@@ -112,3 +116,21 @@ Num = connect(Num); // if this were in another file, export default connect(Num)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
+
+## Running the example
+
+`git clone https://github.com/MiLeung/react-one.git`
+
+`cd react-one`
+
+`npm i`
+
+`npm start`
+
+Then in another window
+
+`cd react-one/example`
+
+`npm i`
+
+`npm start`
